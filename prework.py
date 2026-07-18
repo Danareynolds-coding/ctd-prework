@@ -5,8 +5,10 @@ from datetime import date
 # example string variable
 name = input("What is name given to you?")
 name_lcn = input("What is name on license?:").lower()
-print(name_lcn)
-valid_license = "hi, {name}" if name == name_lcn else "This is not your licence"
+if name == name_lcn:
+  print("Hi, " + name)
+else:
+  print("This is not your licence")
 
 # define function/determine age based on today's date
 def old_enough(birth_date):
@@ -30,15 +32,16 @@ else:
 drink_cost = 10.00
 tax = drink_cost * .08
 total_drink_cost = drink_cost + tax
-money_in_purse = 20.00
+money_in_purse = float(input("How much money in your purse?:"))
 
 if total_drink_cost < money_in_purse:
-  print("You can afford your drink at {total_drink_cost}!")
+  print("You can afford your drink at $" + str(total_drink_cost))
 else:
   print("Sorry not enough money.")
 #example boolean variable
-is_pregnant = input("Ask Susan if she is pregnant TRUE or FALSE:").upper()
-if is_pregnant = TRUE:
-  print("Drinking will hurt your baby!!")
+person_response = input("Ask yourself- Am I pregnant?(yes/no):")
+is_pregnant = person_response in ["yes", "y", "true"]
+if is_pregnant:
+  print("Think about how drinking will hurt your baby!!")
 else: 
-  print("No Problem, let's check your age and I'll let you buy that drink!")
+  print("Think no problem-I will buy my drink now.")
